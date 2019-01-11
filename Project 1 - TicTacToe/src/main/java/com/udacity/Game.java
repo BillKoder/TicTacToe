@@ -31,15 +31,15 @@ public class Game {
         this.twoPlayer = twoPlayer;
 
         // initialize all chars in 3x3 game grid to '-'
-        grid = new char[3][3];
+        grid = new char[7][6];
         //fill all empty slots with -
-        for (int i=0; i<3; i++){
-            for (int j=0; j<3; j++){
+        for (int i=0; i<7; i++){
+            for (int j=0; j<6; j++){
                 grid[i][j] = '-';
             }
         }
         //start with 9 free spots and decrement by one every time a spot is taken
-        freeSpots = 9;
+        freeSpots = 42;
         //x always starts
         turn = 'x';
     }
@@ -56,7 +56,7 @@ public class Game {
      *          '!' if i or j is out of bounds
      */
     public char gridAt(int i, int j){
-        if(i>=3||j>=3||i<0||j<0)
+        if(i>=7||j>=6||i<0||j<0)
             return '!';
         return grid[i][j];
     }
@@ -70,7 +70,7 @@ public class Game {
      */
     public boolean playAt(int i, int j){
         //check for index boundries
-        if(i>=3||j>=3||i<0||j<0)
+        if(i>=7||j>=6||i<0||j<0)
             return false;
         //check if this position is available
         if(grid[i][j] != '-'){
@@ -78,6 +78,14 @@ public class Game {
         }
         //update grid with new play based on who's turn it is
         grid[i][j] = turn;
+        for (int y = 0; y < 6; y++){
+            System.out.println("");
+            for (int x = 0; x < 7; x++){
+                System.out.print(grid[x][y] + " ");
+            }
+        }
+        System.out.println("");
+
         //update free spots
         freeSpots--;
         return true;
@@ -93,7 +101,7 @@ public class Game {
     }
 
     /**
-     * Performs the winner chack and displayes a message if game is over
+     * Performs the winner check and displays a message if game is over
      * @return true if game is over to start a new game
      */
     public boolean doChecks() {
@@ -119,8 +127,8 @@ public class Game {
             int ai_i, ai_j;
             do {
                 //randomly pick a position (ai_i,ai_j)
-                ai_i = (int) (Math.random() * 3);
-                ai_j = (int) (Math.random() * 3);
+                ai_i = (int) (Math.random() * 7);
+                ai_j = (int) (Math.random() * 6);
             }while(grid[ai_i][ai_j] != '-'); //keep trying if this spot was taken
             //update grid with new play, computer is always o
             grid[ai_i][ai_j] = 'o';

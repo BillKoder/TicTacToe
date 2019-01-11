@@ -37,8 +37,8 @@ public class GameUI extends JPanel {
         try {
             ClassLoader classLoader = GameUI.class.getClassLoader();
             grid = ImageIO.read(classLoader.getResourceAsStream("Connect4Board copy.png"));
-            x = ImageIO.read(classLoader.getResourceAsStream("x.png"));
-            o = ImageIO.read(classLoader.getResourceAsStream("o.png"));
+            x = ImageIO.read(classLoader.getResourceAsStream("x2b.png"));
+            o = ImageIO.read(classLoader.getResourceAsStream("o2b.png"));
         } catch (IOException ex) {
             System.out.println("Failed to load images");
         }
@@ -77,8 +77,8 @@ public class GameUI extends JPanel {
                 if(e.getX()<boardX || e.getY() < boardY)
                     return;
                 //calculate which part of the grid did they click
-                int i = (int) (3*((e.getX()-boardX)/(boardWidth-boardX)));
-                int j = (int) (3*((e.getY()-boardY)/(boardHeight-boardY)));
+                int i = (int) (7*((e.getX()-boardX)/(boardWidth-boardX)));
+                int j = (int) (6*((e.getY()-boardY)/(boardHeight-boardY)));
                 //take action and update grid 2D array based on where they clicked
                 panelMouseClicked(i,j);
             }
@@ -93,7 +93,7 @@ public class GameUI extends JPanel {
         final int HEIGHT = 530;
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
-        //create the frame that would include this panel and siplay it
+        //create the frame that would include this panel and display it
         frame = new JFrame();
         frame.add(this);            // add this panel to the frame
         frame.pack();               // shrink the window to the appropriate size
@@ -113,15 +113,15 @@ public class GameUI extends JPanel {
         // .. plus the grid lines ..
         g.drawImage(grid, 10, 40, null);
         // .. and loop over the game grid and display all x's and o's
-        for(int i=0; i<3;i++){
-            for(int j=2; j>=0;j--) {
+        for(int i=0; i<7;i++){
+            for(int j=6; j>=0;j--) {
                 if(game.gridAt(i,j)=='x'){
                     //based on grid index, calculate the pixel location to draw the x image
-                    g.drawImage(x, 200*i+40,200*j+70, null); // draw an x
+                    g.drawImage(x, 90*i+30,80*j+50, null); // draw an x
                 }
                 else if(game.gridAt(i,j)=='o'){
                     //based on grid index, calculate the pixel location to draw the o image
-                    g.drawImage(o, 200*i+40,200*j+70, null); // draw an o
+                    g.drawImage(o, 90*i+30,80*j+50, null); // draw an o
                 }
             }
         }
