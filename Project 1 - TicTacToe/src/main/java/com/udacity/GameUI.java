@@ -36,7 +36,7 @@ public class GameUI extends JPanel {
         // load images from resources files
         try {
             ClassLoader classLoader = GameUI.class.getClassLoader();
-            grid = ImageIO.read(classLoader.getResourceAsStream("grid.png"));
+            grid = ImageIO.read(classLoader.getResourceAsStream("Connect4Board copy.png"));
             x = ImageIO.read(classLoader.getResourceAsStream("x.png"));
             o = ImageIO.read(classLoader.getResourceAsStream("o.png"));
         } catch (IOException ex) {
