@@ -89,8 +89,8 @@ public class GameUI extends JPanel {
         this.add(new2PlayerGameButton);
 
         //set panel dimensions
-        final int WIDTH = 620;
-        final int HEIGHT = 650;
+        final int WIDTH = 660;
+        final int HEIGHT = 530;
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
         //create the frame that would include this panel and siplay it
