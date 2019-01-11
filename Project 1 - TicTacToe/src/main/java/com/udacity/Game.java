@@ -30,7 +30,7 @@ public class Game {
         //sets a game to one or two player
         this.twoPlayer = twoPlayer;
 
-        // initialize all chars in 3x3 game grid to '-'
+        // initialize all chars in 7x6 game grid to '-'
         grid = new char[7][6];
         //fill all empty slots with -
         for (int i=0; i<7; i++){
@@ -77,7 +77,13 @@ public class Game {
             return false; //bail out if not available
         }
         //update grid with new play based on who's turn it is
-        grid[i][j] = turn;
+            int topLocation = 0;
+            for (int row = 0; row <= 5; row++){
+                if (grid[i][row] == '-')
+                    topLocation = row;
+                else break;
+                }
+        grid[i][topLocation] = turn;
         for (int y = 0; y < 6; y++){
             System.out.println("");
             for (int x = 0; x < 7; x++){
@@ -128,10 +134,15 @@ public class Game {
             do {
                 //randomly pick a position (ai_i,ai_j)
                 ai_i = (int) (Math.random() * 7);
-                ai_j = (int) (Math.random() * 6);
-            }while(grid[ai_i][ai_j] != '-'); //keep trying if this spot was taken
+            }while(ai_i == '-'); //keep trying if this spot was taken
             //update grid with new play, computer is always o
-            grid[ai_i][ai_j] = 'o';
+            int topLocation = 0;
+            for (int row = 0; row <= 5; row++){
+                if (grid[ai_i][row] == '-')
+                    topLocation = row;
+                else break;
+            }
+            grid[ai_i][topLocation] = 'o';
             //update free spots
             freeSpots--;
         }
@@ -161,6 +172,7 @@ public class Game {
         //Student code goes here ...
         boolean win;
         char[] solution = new char[3];
+
 
         // Check first column
         solution[0] = grid[0][0];
