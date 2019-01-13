@@ -130,17 +130,20 @@ public class Game {
             if(freeSpots == 0){
                 return ; //bail out if no more free spots
             }
-            int ai_i, ai_j;
-            do {
-                //randomly pick a position (ai_i,ai_j)
-                ai_i = (int) (Math.random() * 7);
-            }while(ai_i == '-'); //keep trying if this spot was taken
+            int ai_i;
+            //randomly pick a position (ai_i)
+            ai_i = (int) (Math.random() * 7);
             //update grid with new play, computer is always o
             int topLocation = 0;
-            for (int row = 0; row <= 5; row++){
-                if (grid[ai_i][row] == '-')
+            for (int row = 5; row >= 0; row--){
+                if (grid[ai_i][row] == '-') {
                     topLocation = row;
-                else break;
+                    break;
+                }
+            }
+            if (grid[ai_i][topLocation] == 'x' || grid[ai_i][topLocation] == 'o') {
+                nextTurn();
+                return;
             }
             grid[ai_i][topLocation] = 'o';
             //update free spots
