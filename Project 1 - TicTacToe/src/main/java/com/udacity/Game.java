@@ -84,13 +84,6 @@ public class Game {
                 else break;
                 }
         grid[i][topLocation] = turn;
-        for (int y = 0; y < 6; y++){
-            System.out.println("");
-            for (int x = 0; x < 7; x++){
-                System.out.print(grid[x][y] + " ");
-            }
-        }
-        System.out.println("");
 
         //update free spots
         freeSpots--;
@@ -174,7 +167,9 @@ public class Game {
         String result = "None";
         //Student code goes here ...
         boolean win;
-        char[] solution = new char[3];
+        char[] solution = new char[4];
+        int nextSpace;
+        int diagonalYChange;
 
 
         // Check first column
@@ -241,6 +236,114 @@ public class Game {
             result = solution[0] + " Wins by downward angle!";
         }
 
+        // Check Horizontal
+        for (int y = 0; y < 6; y++){
+            for (int x = 0; x < 4; x++){
+                if (grid[x][y] != '-') {
+                    solution[0] = grid[x][y];
+                    nextSpace = x;
+                    nextSpace++;
+                    if (grid[nextSpace][y] == solution[0]) {
+                        solution[1] = grid[nextSpace][y];
+                        nextSpace++;
+                        if (grid[nextSpace][y] == solution[0]) {
+                            solution[2] = grid[nextSpace][y];
+                            nextSpace++;
+                            if (grid[nextSpace][y] == solution[0]) {
+                                solution[3] = grid[nextSpace][y];
+                                if (checkSolution(solution) == true){
+                                    result = solution[0] + " Wins Horizontally!";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Check Vertical
+        for (int x = 0; x < 7; x++){
+            for (int y = 5; y > 2; y --){
+                if (grid[x][y] != '-') {
+                    solution[0] = grid[x][y];
+                    nextSpace = y;
+                    nextSpace--;
+                    if (grid[x][nextSpace] == solution[0]) {
+                        solution[1] = grid[x][nextSpace];
+                        nextSpace--;
+                        if (grid[x][nextSpace] == solution[0]) {
+                            solution[2] = grid[x][nextSpace];
+                            nextSpace--;
+                            if (grid[x][nextSpace] == solution[0]) {
+                                solution[3] = grid[x][nextSpace];
+                                if (checkSolution(solution) == true){
+                                    result = solution[0] + " Wins Vertically!";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Check Diagonal Down
+        for (int x = 0; x < 4; x++){
+            for (int y = 0; y < 3; y ++){
+                if (grid[x][y] != '-') {
+                    solution[0] = grid[x][y];
+                    nextSpace = x;
+                    diagonalYChange = y;
+                    nextSpace++;
+                    diagonalYChange++;
+                    if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                        solution[1] = grid[nextSpace][diagonalYChange];
+                        nextSpace++;
+                        diagonalYChange++;
+                        if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                            solution[2] = grid[nextSpace][diagonalYChange];
+                            nextSpace++;
+                            diagonalYChange++;
+                            if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                                solution[3] = grid[nextSpace][diagonalYChange];
+                                if (checkSolution(solution) == true){
+                                    result = solution[0] + " Wins Diagonally!";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Check Diagonal Up
+        for (int x = 0; x < 4; x++){
+            for (int y = 5; y > 2; y --){
+                if (grid[x][y] != '-') {
+                    solution[0] = grid[x][y];
+                    nextSpace = x;
+                    diagonalYChange = y;
+                    nextSpace++;
+                    diagonalYChange--;
+                    if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                        solution[1] = grid[nextSpace][diagonalYChange];
+                        nextSpace++;
+                        diagonalYChange--;
+                        if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                            solution[2] = grid[nextSpace][diagonalYChange];
+                            nextSpace++;
+                            diagonalYChange--;
+                            if (grid[nextSpace][diagonalYChange] == solution[0]) {
+                                solution[3] = grid[nextSpace][diagonalYChange];
+                                if (checkSolution(solution) == true){
+                                    result = solution[0] + " Wins Diagonally!";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         if (freeSpots == 0){
             result = "Tie!";
         }
@@ -252,7 +355,7 @@ public class Game {
         char value = solution[0];
         boolean result = false;
         if (value == 'o' || value == 'x') {
-            for (int i = 0; i < 3; i++){
+            for (int i = 0; i < 4; i++){
                 if (value == solution[i]) {
                     result = true;
                 }

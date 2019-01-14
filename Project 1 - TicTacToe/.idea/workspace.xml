@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916c577-9518-416f-be98-3985faa238b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/Game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -24,11 +23,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/udacity/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
+            <state relative-caret-position="797">
+              <caret line="337" column="76" lean-forward="true" selection-start-line="337" selection-start-column="76" selection-end-line="337" selection-end-column="76" />
               <folding>
-                <element signature="e#3227#3228#0" expanded="true" />
-                <element signature="e#3280#3281#0" expanded="true" />
+                <element signature="e#3233#3234#0" expanded="true" />
+                <element signature="e#3286#3287#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/udacity/GameUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="1759">
               <caret line="138" column="23" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="23" />
             </state>
           </provider>
@@ -48,8 +47,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>grid</find>
-      <find>playat</find>
       <find>turn</find>
+      <find>s</find>
+      <find>playat</find>
+      <find>S</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,7 +65,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-20" />
+    <option name="x" value="20" />
     <option name="y" value="54" />
     <option name="width" value="1260" />
     <option name="height" value="737" />
@@ -124,7 +125,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547339284826" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547490822204" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -166,7 +167,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-20" y="54" width="1260" height="737" extended-state="0" />
+    <frame x="20" y="54" width="1260" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19950739" />
@@ -250,18 +251,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/udacity/GameUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="1759">
           <caret line="138" column="23" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/udacity/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
+        <state relative-caret-position="797">
+          <caret line="337" column="76" lean-forward="true" selection-start-line="337" selection-start-column="76" selection-end-line="337" selection-end-column="76" />
           <folding>
-            <element signature="e#3227#3228#0" expanded="true" />
-            <element signature="e#3280#3281#0" expanded="true" />
+            <element signature="e#3233#3234#0" expanded="true" />
+            <element signature="e#3286#3287#0" expanded="true" />
           </folding>
         </state>
       </provider>
